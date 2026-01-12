@@ -1,0 +1,23 @@
+environment: dev
+
+replicaCount:
+  vote: 1
+  result: 1
+  worker: 1
+  db: 1
+  redis: 1
+
+images:
+  vote: voting-app/vote
+  result: dockersamples/examplevotingapp_result
+  worker: dockersamples/examplevotingapp_worker
+  redis: redis:alpine
+  postgres: postgres:15-alpine
+
+db:
+  user: postgres
+  password: postgres
+  volume: emptyDir
+
+redis:
+  volume: emptyDir

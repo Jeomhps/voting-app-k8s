@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: vote
+  name: vote
+spec:
+  replicas: {{ .Values.replicaCount.vote }}
+  selector:
+    matchLabels:
+      app: vote
+  template:
+    metadata:
+      labels:
+        app: vote
+    spec:
+      containers:
+      - image: {{ .Values.images.vote }}
+        imagePullPolicy: Never
+        name: vote
+        env:
+          - name: ENVIRONMENT
+            value: {{ .Values.environment }}
+        ports:
+        - containerPort: 80
+          name: vote

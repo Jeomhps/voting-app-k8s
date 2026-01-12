@@ -1,0 +1,12 @@
+environment: dev
+replicaCount:
+  vote: 1
+  result: 1
+  worker: 1
+  db: 1
+  redis: 1
+services:
+  vote:
+    nodePort: 31010
+  result:
+    nodePort: 31011

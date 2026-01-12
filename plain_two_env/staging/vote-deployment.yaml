@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: vote
+  name: vote
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vote
+  template:
+    metadata:
+      labels:
+        app: vote
+    spec:
+      containers:
+      - image: voting-app/vote  # use the modified local image
+        imagePullPolicy: Never  # force local image to be used
+        name: vote
+        env:
+          - name: ENVIRONMENT
+            value: staging  # Variable for "STAGING ENV" banner
+        ports:
+        - containerPort: 80
+          name: vote
