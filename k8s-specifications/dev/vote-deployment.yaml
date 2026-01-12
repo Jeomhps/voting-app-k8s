@@ -15,8 +15,7 @@ spec:
         app: vote
     spec:
       containers:
-      - image: voting-app/vote
-        imagePullPolicy: Never  # force local image to be used
+      - image: ghcr.io/jeomhps/modified-vote:sha-e60b98a
         name: vote
         env:
           - name: ENVIRONMENT
