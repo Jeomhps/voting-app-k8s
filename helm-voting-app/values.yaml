@@ -8,7 +8,7 @@ replicaCount:
   redis: 1
 
 images:
-  vote: voting-app/vote
+  vote: ghcr.io/jeomhps/modified-vote:sha-e60b98a
   result: dockersamples/examplevotingapp_result
   worker: dockersamples/examplevotingapp_worker
   redis: redis:alpine

@@ -16,7 +16,6 @@ spec:
     spec:
       containers:
       - image: {{ .Values.images.vote }}
-        imagePullPolicy: Never
         name: vote
         env:
           - name: ENVIRONMENT
