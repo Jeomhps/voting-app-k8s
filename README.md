@@ -4,6 +4,22 @@ This guide explains how to deploy the Voting App using three different methods: 
 
 ---
 
+## Table of Contents
+
+1. [Prerequisites](#prerequisites)
+2. [Repository Structure](#repository-structure)
+3. [Kind Configuration](#kind-configuration)
+4. [Deployment Methods](#deployment-methods)
+   - [Plain Kubernetes Manifests](#1-plain-kubernetes-manifests)
+   - [Kustomize](#2-kustomize)
+   - [Helm](#3-helm)
+5. [Testing and Debugging](#testing-and-debugging)
+6. [Cleanup](#cleanup)
+7. [Notes](#notes)
+8. [Further Reading](#further-reading)
+
+---
+
 ## Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/) (for Kind)
