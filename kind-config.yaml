@@ -1,0 +1,13 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+    extraPortMappings:
+      - containerPort: 31010  # Port NodePort for dev
+        hostPort: 31010
+      - containerPort: 31011  # Port NodePort for dev
+        hostPort: 31011
+      - containerPort: 31020  # Port NodePort for staging
+        hostPort: 31020
+      - containerPort: 31021  # Port NodePort for staging
+        hostPort: 31021
