@@ -39,23 +39,19 @@ voting-app/
 
 ## Kind Configuration
 
-Create a `kind-config.yaml` file to map NodePorts to host ports:
+The kind-config.yaml file is provided in this repository to map NodePorts to host ports. Since Kind runs Kubernetes clusters inside Docker containers, NodePort services are not directly accessible from your host machine. To expose them, you need to explicitly map the container ports to host ports.
+This configuration reflects the NodePort values defined in the manifests for each environment (dev and staging). The mappings are as follows:
 
-```yaml
-kind: Cluster
-apiVersion: kind.x-k8s.io/v1alpha4
-nodes:
-  - role: control-plane
-    extraPortMappings:
-      - containerPort: 31010  # Dev: Vote service
-        hostPort: 31010
-      - containerPort: 31011  # Dev: Result service
-        hostPort: 31011
-      - containerPort: 31020  # Staging: Vote service
-        hostPort: 31020
-      - containerPort: 31021  # Staging: Result service
-        hostPort: 31021
-```
+
+- Dev environment:
+  - 31010: Vote service
+  - 31011: Result service
+
+- Staging environment:
+  - 31020: Vote service
+  - 31021: Result service
+
+If you modify these port mappings, make sure to update the corresponding NodePort values in your Kubernetes manifests or Helm values to maintain consistency.
 
 ---
 
