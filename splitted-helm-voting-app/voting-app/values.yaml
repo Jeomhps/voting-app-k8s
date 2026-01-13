@@ -1,0 +1,29 @@
+environment: dev
+
+vote:
+  replicaCount: 1
+  image: ghcr.io/jeomhps/modified-vote:sha-e60b98a
+  service:
+    nodePort: 31010
+
+result:
+  replicaCount: 1
+  image: dockersamples/examplevotingapp_result
+  service:
+    nodePort: 31011
+
+worker:
+  replicaCount: 1
+  image: dockersamples/examplevotingapp_worker
+
+db:
+  replicaCount: 1
+  image: postgres:15-alpine
+  user: postgres
+  password: postgres
+  volume: emptyDir
+
+redis:
+  replicaCount: 1
+  image: redis:alpine
+  volume: emptyDir

@@ -1,0 +1,5 @@
+replicaCount: 1
+image: postgres:15-alpine
+user: postgres
+password: postgres
+volume: emptyDir

@@ -1,0 +1,8 @@
+replicaCount: 1
+image: ghcr.io/jeomhps/modified-vote:sha-e60b98a
+environment: dev
+service:
+  type: NodePort
+  port: 8080
+  targetPort: 80
+  nodePort: 31010

@@ -1,0 +1,24 @@
+global:
+  environment: dev
+
+vote:
+  replicaCount: 1
+  environment: dev
+  service:
+    nodePort: 31010
+
+result:
+  replicaCount: 1
+  environment: dev
+  service:
+    nodePort: 31011
+
+worker:
+  replicaCount: 1
+  environment: dev
+
+db:
+  replicaCount: 1
+
+redis:
+  replicaCount: 1

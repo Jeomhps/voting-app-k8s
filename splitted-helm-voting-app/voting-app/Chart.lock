@@ -1,0 +1,18 @@
+dependencies:
+- name: vote
+  repository: file://../charts/vote
+  version: 0.1.0
+- name: result
+  repository: file://../charts/result
+  version: 0.1.0
+- name: worker
+  repository: file://../charts/worker
+  version: 0.1.0
+- name: db
+  repository: file://../charts/db
+  version: 0.1.0
+- name: redis
+  repository: file://../charts/redis
+  version: 0.1.0
+digest: sha256:05dc3c1b8acb3da4a67666b48393ba81804439b7c02b9efb2ac56ef7b050796c
+generated: "2026-01-13T11:45:04.284207+01:00"
