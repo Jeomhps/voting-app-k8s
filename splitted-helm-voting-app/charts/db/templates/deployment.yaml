@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: db
+  name: db
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - image: {{ .Values.image }}
+        name: db
+        env:
+          - name: POSTGRES_USER
+            value: {{ .Values.user }}
+          - name: POSTGRES_PASSWORD
+            value: {{ .Values.password }}
+        ports:
+        - containerPort: 5432
+          name: postgres
+        volumeMounts:
+        - name: db-data
+          mountPath: /var/lib/postgresql/data
+      volumes:
+      - name: db-data
+        emptyDir: {}

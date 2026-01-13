@@ -1,0 +1,22 @@
+apiVersion: v2
+name: voting-app
+description: A parent Helm chart for the complete voting application
+version: 0.1.0
+appVersion: "1.16.0"
+type: application
+dependencies:
+  - name: vote
+    version: 0.1.0
+    repository: "file://../charts/vote"
+  - name: result
+    version: 0.1.0
+    repository: "file://../charts/result"
+  - name: worker
+    version: 0.1.0
+    repository: "file://../charts/worker"
+  - name: db
+    version: 0.1.0
+    repository: "file://../charts/db"
+  - name: redis
+    version: 0.1.0
+    repository: "file://../charts/redis"

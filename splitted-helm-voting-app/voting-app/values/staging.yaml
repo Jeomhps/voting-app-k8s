@@ -1,0 +1,20 @@
+environment: staging
+
+vote:
+  replicaCount: 3
+  service:
+    nodePort: 31020
+
+result:
+  replicaCount: 1
+  service:
+    nodePort: 31021
+
+worker:
+  replicaCount: 2
+
+db:
+  replicaCount: 1
+
+redis:
+  replicaCount: 1

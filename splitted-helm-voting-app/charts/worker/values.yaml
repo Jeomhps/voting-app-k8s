@@ -1,0 +1,3 @@
+replicaCount: 1
+image: dockersamples/examplevotingapp_worker
+environment: dev

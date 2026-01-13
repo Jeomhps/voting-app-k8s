@@ -1,0 +1,8 @@
+replicaCount: 1
+image: dockersamples/examplevotingapp_result
+environment: dev
+service:
+  type: NodePort
+  port: 8080
+  targetPort: 80
+  nodePort: 31011
