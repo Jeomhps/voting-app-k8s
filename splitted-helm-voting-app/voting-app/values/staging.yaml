@@ -1,17 +1,21 @@
-environment: staging
+global:
+  environment: staging
 
 vote:
   replicaCount: 3
+  environment: staging
   service:
     nodePort: 31020
 
 result:
   replicaCount: 1
+  environment: staging
   service:
     nodePort: 31021
 
 worker:
   replicaCount: 2
+  environment: staging
 
 db:
   replicaCount: 1
