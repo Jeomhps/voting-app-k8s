@@ -14,8 +14,8 @@ plain:
 
 kustomize:
     just setup-cluster {{CLUSTER_KUSTOMIZE}}
-    kubectl apply -k kustomize/overlays/dev
-    kubectl apply -k kustomize/overlays/staging
+    kubectl apply -k kustomize-voting-app/overlays/dev
+    kubectl apply -k kustomize-voting-app/overlays/staging
 
 helm:
     just setup-cluster {{CLUSTER_HELM}}
